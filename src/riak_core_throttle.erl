@@ -221,9 +221,9 @@ flat_concat(ListOfLists) when is_list(ListOfLists)->
       fun(X, Acc) ->
               case length(X) == lists:flatlength(X) of
                   true ->
-                      lists:append(Acc, [X]);
+                      Acc ++ [X];
                   false ->
-                      lists:append(Acc, X)
+                      Acc ++ X
               end
       end,
       [],
